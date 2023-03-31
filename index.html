@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Bài Tập Javascript Buổi 2</h1>
+        <form action="" method="post" class="form" id="form-1">
+            <div class="form-group">
+                <label for="firstname" class="form-label">First Name</label>
+                <input id="firstname" name="firstname" type="text">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="form-label">Last Name </label>
+                <input id="lastname" name="lastname" type="text">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="age" class="form-label">Age </label>
+                <input id="age" name="age" type="number">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="email">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="website" class="form-label">Website</label>
+                <input id="website" name="website" type="text">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SUBMIT" id="submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="./main.js"></script>
+
+    <script>
+
+        Validator({
+            selector : '#form-1',
+            errorElement: '.form-message',
+            rules : [
+                Validator.isRequired('#firstname', 'Vui long nhap FirstName'),
+                Validator.isRequired('#lastname', 'Vui long nhap LastName'),
+                Validator.isRequired('#age', 'Vui long nhap Age'),
+                Validator.isRequired('#website', 'Vui long nhap website'),
+                Validator.isWebsite('#website', 'Vui long nhap dung kieu du lieu la mot website'),
+                Validator.isRequired('#email', 'Vui long nhap Email'),
+                Validator.isEmail('#email', 'Vui long nhap dung kieu Email'),
+            ]
+        });
+
+
+    </script>
+</body>
+</html>
